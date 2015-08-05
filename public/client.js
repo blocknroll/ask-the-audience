@@ -24,5 +24,8 @@ var voteTally = document.getElementById('vote-tally');
 
 socket.on('voteCount', function (votes) {
   console.log(votes);
-  voteTally.innerText = votes;
+  voteTally.innerText = ' A: ' + votes["A"] +
+                        ' B: ' + votes["B"] +
+                        ' C: ' + votes["C"] +
+                        ' D: ' + votes["D"] ;
 });

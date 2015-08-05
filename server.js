@@ -28,8 +28,6 @@ io.on('connection', function (socket) {
 
   socket.emit('statusMessage', 'You have connected!');
 
-  socket.emit('voteTally', countVotes(votes));
-
   socket.on('message', function (channel, message) {
     // console.log(channel, message);
     if (channel === 'voteCast') {
@@ -58,10 +56,6 @@ function countVotes(votes) {
     voteCount[votes[vote]]++
   }
   return voteCount;
-}
-
-function voteTally(voteCount) {
-  io.sockets.emit('voteTally', voteCount);
 }
 
 module.exports = server;
