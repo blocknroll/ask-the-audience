@@ -1,0 +1,25 @@
+{
+  "name": "ask-the-audience",
+  "version": "0.0.1",
+  "description": "A real-time application using WebSockets.",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blocknroll/ask-the-audience.git"
+  },
+  "author": "Fred Block",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blocknroll/ask-the-audience/issues"
+  },
+  "homepage": "https://github.com/blocknroll/ask-the-audience",
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "socket.io": "^1.3.6"
+  }
+}
