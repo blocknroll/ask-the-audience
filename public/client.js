@@ -2,7 +2,7 @@ var socket = io();
 
 var connectionCount = document.getElementById('connection-count');
 
-socket.on('usersConnected', function (count) {
+socket.on('userConnection', function (count) {
   connectionCount.innerText = 'Connected Users: ' + count;
 });
 
@@ -19,3 +19,10 @@ for (var i = 0; i < buttons.length; i++) {
     socket.send('voteCast', this.innerText);
   });
 }
+
+var voteTally = document.getElementById('vote-tally');
+
+socket.on('voteCount', function (votes) {
+  console.log(votes);
+  voteTally.innerText = votes;
+});
