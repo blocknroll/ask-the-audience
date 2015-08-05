@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/blocknroll/ask-the-audience/issues"
   },
-  "homepage": "https://github.com/blocknroll/ask-the-audience"
+  "homepage": "https://github.com/blocknroll/ask-the-audience",
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "socket.io": "^1.3.6"
+  }
 }
