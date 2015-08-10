@@ -17,6 +17,8 @@ var buttons = document.querySelectorAll('#choices button');
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
     socket.send('voteCast', this.innerText);
+    // socket.send('voteFeedback', this.innerText);
+    userVote(this.innerText);
   });
 }
 
@@ -29,3 +31,11 @@ socket.on('voteCount', function (votes) {
                         ' C: ' + votes["C"] +
                         ' D: ' + votes["D"] ;
 });
+
+
+
+var userVote = function (userVote) {
+  var voteFeedback = document.getElementById('vote-feedback');
+  userVote = JSON.stringify(userVote);
+  voteFeedback.innerText = 'My vote: ' + userVote;
+}

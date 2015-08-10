@@ -29,10 +29,10 @@ io.on('connection', function (socket) {
   socket.emit('statusMessage', 'You have connected!');
 
   socket.on('message', function (channel, message) {
-    // console.log(channel, message);
     if (channel === 'voteCast') {
       votes[socket.id] = message;
       socket.emit('voteCount', countVotes(votes));
+      // socket.emit('voteFeedback', individualVote(vote));
     }
   });
 
@@ -57,5 +57,9 @@ function countVotes(votes) {
   }
   return voteCount;
 }
+
+// function individualVote(vote) {
+//   console.log(vote)
+// };
 
 module.exports = server;
